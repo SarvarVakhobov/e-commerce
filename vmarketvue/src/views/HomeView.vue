@@ -61,8 +61,15 @@ export default {
 
 <style scoped>
   .image {
-    margin-top: -1.25rem;
+    /* margin-top: -1.25rem;
     margin-left: -1.25rem;
-    margin-right: -1.25rem;
+    margin-right: -1.25rem; */
+    text-align: center;
+  }
+  .image img{
+    height: 200px;
+    width: 300px;
+    object-fit: cover;
+    border-radius: 2%;
   }
 </style>

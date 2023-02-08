@@ -15,11 +15,13 @@
 
                 <p><strong>Price: </strong>${{ product.price }}</p>
 
-                <div class="control">
-                    <input type="number" class="input" min="1" v-model="quantity">
-                </div>
-                <div class="control">
-                    <a class="button is-dark">Add to card</a>
+                    <div class="field has-addons mt-6">
+                    <div class="control">
+                        <input type="number" class="input" min="1" v-model="quantity">
+                    </div>
+                    <div class="control">
+                        <a class="button is-dark" @click="addToCart">Add to cart</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -46,14 +48,41 @@ export default{
             const product_slug = this.$route.params.product_slug
 
             axios
-                .get('/api/v1/products/${category_slug}/${product_slug}')
+                .get(`/api/v1/products/${category_slug}/${product_slug}/`)
                 .then(response => {
                     this.product = response.data
                 })
                 .catch(error => {
                     console.log(error)
                 })
+        },
+        addToCart() {
+            if (isNaN(this.quantity) || this.quantity<1){
+                this.quantity = 1
+            }
+
+            const item = {
+                product : this.product,
+                quantity : this.quantity
+            }
+
+            this.$store.commit('addToCart', item)
         }
     }
 }
 </script>
+
+<style scoped>
+  .image {
+    /* margin-top: -1.25rem;
+    margin-left: -1.25rem;
+    margin-right: -1.25rem; */
+    text-align: center;
+  }
+  .image img{
+    height: 400px;
+    width: 600px;
+    object-fit: cover;
+    border-radius: 2%;
+  }
+</style>
