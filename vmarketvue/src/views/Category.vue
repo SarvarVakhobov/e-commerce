@@ -31,6 +31,13 @@ export default{
     mounted(){
         this.getCategory()
     },
+    watch:{
+        $route(to, from){
+            if(to.name === 'Category'){
+                this.getCategory()
+            }
+        }
+    },
     methods:{
         async getCategory(){
             const categorySlug = this.$route.params.category_slug
@@ -41,8 +48,7 @@ export default{
             .get(`/api/v1/products/${categorySlug}/`)
             .then(response => {
                 this.category = response.data
-
-                document.title(this.category.name + ' | V-Market')
+                document.title = this.category.name + ' | V-Market'
             })
             .catch(error => {
                 toast({
