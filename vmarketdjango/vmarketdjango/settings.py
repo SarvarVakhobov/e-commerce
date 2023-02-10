@@ -27,6 +27,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+STRIPE_SECRET_KEY = 'pk_test_51MZwUkIphHwt8pQGY9mcHvONxwPV7s210pwSKjsVnqLV86dTSxlRdNWFQduuNUMUg2kLwHjqOCXDp65E920Ekg4J00UaflF5ip'
 
 # Application definition
 
@@ -46,6 +47,7 @@ INSTALLED_APPS = [
 
     #my apps
     'product',
+    'order',
 ]
 
 CORS_ALLOWED_ORIGINS = [
