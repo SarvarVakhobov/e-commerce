@@ -71,7 +71,6 @@ export default{
                 product : this.product,
                 quantity : this.quantity
             }
-            console.log(item)
 
             this.$store.commit('addToCart', item)
 
@@ -88,3 +87,17 @@ export default{
 }
 </script>
 
+<style scoped>
+  .image {
+    /* margin-top: -1.25rem;
+    margin-left: -1.25rem;
+    margin-right: -1.25rem; */
+    text-align: center;
+  }
+  .image img{
+    height: 400px;
+    width: 600px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+</style>
