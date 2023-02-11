@@ -186,6 +186,7 @@ export default {
                     }
                 })
             }
+            console.log(this.item)
         },
         async stripeTokenHandler(token) {
             const items = []
