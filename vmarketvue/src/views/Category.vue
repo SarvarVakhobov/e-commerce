@@ -22,7 +22,8 @@ export default{
         return{
             category: {
                 products: []
-            }
+            },
+            categories: {}
         }
     },
     components: {
@@ -62,7 +63,7 @@ export default{
             })
 
             this.$store.commit('setIsLoading', false)
-        }
+        },
     }
 }
 </script>

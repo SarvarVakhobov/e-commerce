@@ -33,9 +33,9 @@
         </div>
 
         <div class="navbar-end">
-          <router-link to="/summer" class="navbar-item">Summer</router-link>
-          <router-link to="/winter" class="navbar-item">Winter</router-link>
-
+          <template v-for="item in categories">
+          <router-link v-bind:to="item.get_absolute_url" class="navbar-item">{{item.name}}</router-link>
+          </template>
           <div class="navbar-item">
             <div class="buttons">
               <template v-if="$store.state.isAuthenticated">
@@ -72,14 +72,20 @@
 
 <script>
 import axios from 'axios'
+import Category from './views/Category.vue'
+
 export default {
   data() {
     return {
       showMobileMenu: false,
       cart: {
         items: []
-      }
+      },
+      categories:{}
     }
+  },
+  components:{
+    Category,
   },
   beforeCreate() {
     this.$store.commit('initializeStore')
@@ -92,6 +98,8 @@ export default {
   },
   mounted() {
     this.cart = this.$store.state.cart
+    this.getCategories()
+
   },
   computed: {
       cartTotalLength() {
@@ -101,6 +109,31 @@ export default {
           }
           return totalLength
       }
+  },
+  methods:{
+    
+    async getCategories(){
+      this.$store.commit('setIsLoading', true)
+
+      axios
+      .get(`/api/v1/categories/`)
+      .then(response => {
+          this.categories = response.data
+          // document.title = this.category.name + ' | V-Market'
+      })
+      .catch(error => {
+          toast({
+              message: 'Somethis went wrong. Please try again.',
+              type: 'is-danger',
+              dismissible: true,
+              pauseOnHover: true,
+              duration: 2500,
+              position: 'bottom-right',
+          })
+      })
+
+      this.$store.commit('setIsLoading', false)
+    },
   }
 }
 </script>
