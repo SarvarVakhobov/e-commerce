@@ -5,60 +5,72 @@ It is a simple store. you can search products you want and buy them. It is linke
 
 To start with venv or sth like this:
 
-    #install venv and activate it
-    $ py -m venv venv
-    $ venv/Scripts/activate
+#enter the django dir
+
+    cd vmarketdjango/
+
+#install venv and activate it
     
-    #install all requirements
-    (venv)
-    $ pip install -r req.txt
+    py -m venv venv
+
+    
+    venv/Scripts/activate
+    
+install all requirements after #(venv) is showed 
+    
+    pip install -r req.txt
     
 Run Django:
     
-    #Open django project derectory
-    $ cd vmarketdjango/
+#Open django project derectory
+Run it
     
-    #Run it
-    (venv)
-    $ py manage.py runserver
-    Performing system checks...
+    py manage.py runserver
+    
+Performing system checks...
 
-    System check identified no issues (0 silenced).
-    April 28, 2023 - 08:59:49
-    Django version 4.0.2, using settings 'vmarketdjango.settings'
-    Starting development server at http://127.0.0.1:8000/
-    Quit the server with CTRL-BREAK.
+System check identified no issues (0 silenced).
+April 28, 2023 - 08:59:49
+Django version 4.0.2, using settings 'vmarketdjango.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.
     
 Run Vue:
 
-    #You should install Vue.js with Node.js on your PC
-    #Then, you can start
-    $ cd vmarketvue/
+#You should install Vue.js with Node.js on your PC
+#Then, you can start
+
+    cd vmarketvue/
+
+#install npm
+
+    npm install
+     
+#Run it
     
-    #Run it
-    $ npm run serve
+    npm run serve
 
-    > vmarketvue@0.1.0 serve
-    > vue-cli-service serve
+> vmarketvue@0.1.0 serve
+> vue-cli-service serve
 
-     INFO  Starting development server...
-
-
-     DONE  Compiled successfully in 3823ms                                                                                                          10:25:37 AM
+INFO  Starting development server...
 
 
-      App running at:
-      - Local:   http://localhost:8080/ 
-      - Network: http://172.16.7.228:8080/
-
-      Note that the development build is not optimized.
-      To create a production build, run npm run build.
+DONE  Compiled successfully in 3823ms                                                                                                        
 
 
+App running at:
+- Local:   http://localhost:8080/ 
+- Network: http://172.16.7.228:8080/
 
-     WAIT  Compiling...                                                                                                                             10:25:37 AM
+Note that the development build is not optimized.
+To create a production build, run npm run build.
 
-    Compiling...
-      App running at:
-      - Local:   http://localhost:8080/
-      - Network: http://172.16.7.228:8080/
+
+
+WAIT  Compiling...                                                                                                                       
+
+Compiling...
+App running at:
+- Local:   http://localhost:8080/
+: http://172.16.7.228:8080/
