@@ -112,3 +112,82 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+# Mobile
+# Built application files
+*.apk
+*.aab
+
+# Files for the ART/Dalvik VM
+*.dex
+
+# Java class files
+*.class
+
+# Generated files
+bin/
+gen/
+out/
+build/
+.gradle/
+.idea/
+captures/
+.externalNativeBuild/
+.cxx/
+local.properties
+.DS_Store
+Thumbs.db
+
+# Gradle files
+.gradle/
+
+# Local configuration file (sdk path, etc)
+local.properties
+
+# AVD configuration files
+*.avd/*.ini
+*.avd/*.ini.lock
+
+# Gradle task execution history
+.gradle-task-history
+
+# Android Studio specific files
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/dictionaries
+.idea/libraries
+.idea/sqlDataSources.xml
+.idea/dynamic.xml
+.idea/codeStyles/Project.xml
+.idea/navEditor.xml
+.idea/assetWizardSettings.xml
+.idea/lint-results.xml
+.idea/render.experimental.xml
+
+# Keystore files
+*.keystore
+
+# Crashlytics/Fabric files
+fabric/
+crashlytics-build.properties
+
+# External native build files
+.externalNativeBuild/
+
+# Kotlin build files
+.kotlin/
+
+# Room auto-generated schema files
+*.json
+
+# Test results
+test-results/
+
+# Debugging files
+*.hprof
+
+# Android Profiler
+*.trace
+
+# Android Studio profiler data
+*.jfr
